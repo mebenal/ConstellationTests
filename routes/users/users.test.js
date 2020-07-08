@@ -1,14 +1,5 @@
 var rp = require('request-promise-native');
 
-it('Testing to see if Jest works', () =>{
-    expect(1).toBe(2);
-})
-
-it('Testing to see if true is true', () =>{
-    expect(1).toBe(1);
-})
-
-
 it('Testing to see if Dev is up', async () =>{
     
     var options = {
@@ -27,7 +18,6 @@ it('Testing to see if Dev is up', async () =>{
         errorWasCaught=true;
     }
     expect(errorWasCaught).toBe(false);
-    expect(errorCaught).toBe(null);
     done();
 })
 
