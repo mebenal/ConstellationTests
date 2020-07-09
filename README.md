@@ -1,4 +1,4 @@
-To set this project up, install NPM
+To set this project up, install NPM: https://nodejs.org/en/download/
 
 Then cd to the folder
 
