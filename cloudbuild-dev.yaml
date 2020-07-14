@@ -1,7 +1,13 @@
 steps:
 - name: node
+  id: build tests
+  entrypoint: npm
+  args:
+  - 'install'
+
+- name: node
+  id: run dev tests
   entrypoint: npm
   args:
   - 'run'
   - 'test'
-  
