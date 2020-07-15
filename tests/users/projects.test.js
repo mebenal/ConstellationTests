@@ -1,9 +1,10 @@
-var rp = require('request-promise-native');
+const rp = require('request-promise-native');
+const config = require('config');
 
 it('Testing to see if Dev is up', async () =>{
     
     var options = {
-        uri: 'http://dev-constellation.citwdd.net/Projects',
+        uri: config.get('constellation-url'),
         // Project
         headers:{
         },
