@@ -1,4 +1,20 @@
 steps:
+#This steps will run the code that we have for our tests 
+#to ensure that the code does not break
+#If it does breack it will not create a build or an image
+- name: node
+  id: build tests
+  entrypoint: npm
+  args:
+  - 'install'
+
+- name: node
+  id: run development environment tests
+  entrypoint: npm
+  args:
+  - 'run'
+  - 'test-dev'
+
 # This step builds the container image.
 - name: 'gcr.io/cloud-builders/docker'
   id: Build
@@ -8,7 +24,7 @@ steps:
   - 'gcr.io/$PROJECT_ID/constellationautotest:$SHORT_SHA'
   - '.'
 
-  # This step pushes the image to Container Registry
+# This step pushes the image to Container Registry
 # The PROJECT_ID and SHORT_SHA variables are automatically
 # replaced by Cloud Build.
 - name: 'gcr.io/cloud-builders/docker'
@@ -16,3 +32,13 @@ steps:
   args:
   - 'push'
   - 'gcr.io/$PROJECT_ID/constellationautotest:$SHORT_SHA'
+
+# This step pushes the image to Container Registry with the latest tag
+# The PROJECT_ID avariables is automatically
+# replaced by Cloud Build.
+- name: 'gcr.io/cloud-builders/docker'
+  id: Push
+  args:
+  - 'push'
+  - 'gcr.io/$PROJECT_ID/constellationautotest:latest'
+
