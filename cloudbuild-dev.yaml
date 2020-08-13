@@ -21,7 +21,7 @@ steps:
   args:
   - 'build'
   - '-t'
-  - 'gcr.io/$PROJECT_ID/constellationautotest:$SHORT_SHA'
+  - 'gcr.io/$PROJECT_ID/constellationautotest:latest'
   - '.'
 
 # This step pushes the image to Container Registry
@@ -31,14 +31,4 @@ steps:
   id: Push
   args:
   - 'push'
-  - 'gcr.io/$PROJECT_ID/constellationautotest:$SHORT_SHA'
-
-# This step pushes the image to Container Registry with the latest tag
-# The PROJECT_ID avariables is automatically
-# replaced by Cloud Build.
-- name: 'gcr.io/cloud-builders/docker'
-  id: Push
-  args:
-  - 'push'
   - 'gcr.io/$PROJECT_ID/constellationautotest:latest'
-
