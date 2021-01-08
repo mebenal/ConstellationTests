@@ -4,7 +4,7 @@ Clone the project: `git clone https://github.com/BYUI-CIT-262/ConstellationTests
 
 Close VS Code and open it again
 
-Then cd to the folder ConstellationTests
+From the terminal: `cd ConstellationTests`
 
 Then type: `npm install`
 
