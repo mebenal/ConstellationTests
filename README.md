@@ -6,4 +6,4 @@ Then cd to the folder ConstellationTests
 
 Then type: npm install
 
-To run tests: npm run test
+To run tests: npm run test-prod
